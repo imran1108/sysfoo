@@ -61,10 +61,7 @@ pipeline {
 
       }
       
-       
-    }
-
-    stage('Deploy to Dev') {
+       stage('Deploy to Dev') {
       when {
               beforeAgent true
               branch 'master'
@@ -77,6 +74,10 @@ pipeline {
               sh 'docker-compose up -d'
               }
            }
+      
+    }
+
+    
   }
   tools {
     maven 'Maven 3.6.3'
